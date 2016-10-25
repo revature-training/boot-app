@@ -1,0 +1,25 @@
+  apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata: 
+    name: "boot-app"
+    labels: 
+      name: "boot-app"
+  spec: 
+    replicas: 1
+    template: 
+      metadata: 
+        name: "boot-app"
+        labels: 
+          name: "boot-app"
+      spec: 
+        containers: 
+          - name: "boot-app"
+            image: "tjkemper/boot-app:0.2"
+            ports: 
+              - containerPort: 8080
+           #livenessProbe:
+            #  httpGet:
+            #    path: /
+            #    port: 8080
+            #  initialDelaySeconds: 60
+            #  timeoutSeconds: 5
