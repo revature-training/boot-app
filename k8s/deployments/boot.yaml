@@ -4,7 +4,7 @@
     name: "boot"
     labels: 
       app: "boot"
-#      environment: "dev"
+      track: "stable"
   spec: 
     replicas: 3
     template: 
@@ -12,7 +12,7 @@
         name: "boot"
         labels: 
           app: "boot"
-#          environment: "dev"
+          track: "stable"
       spec: 
         containers: 
           - name: "boot"
@@ -26,9 +26,15 @@
               limits:
                 cpu: 0.1
                 memory: 400M
-           #livenessProbe:
-            #  httpGet:
-            #    path: /
-            #    port: 8080
-            #  initialDelaySeconds: 60
-            #  timeoutSeconds: 5
+#            livenessProbe:
+#              httpGet:
+#                path: /healthz
+#                port: 8080
+#              initialDelaySeconds: 20
+#              timeoutSeconds: 5
+#            readinessProbe:
+#              httpGet:
+#                path: /readiness
+#                port: 8080
+#              initialDelaySeconds: 40
+#              timeoutSeconds: 5
