@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+#  namespace: "boot"
+  name: "boot"
+spec:
+  ports:
+    - name: "http"
+      port: 80
+      targetPort: 8080
+  selector:
+    app: "boot"
+#    environment: "dev"
+#  type: LoadBalancer
+#  sessionAffinity: ClientIP
