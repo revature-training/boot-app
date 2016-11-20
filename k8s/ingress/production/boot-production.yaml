@@ -1,21 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-#  namespace: "boot"
   name: "boot"
+  namespace: "boot-production"
   annotations:
     kubernetes.io/tls-acme: "true"
     ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
   - hosts:
-    - apps.taylorkemper.com
-    secretName: apps-tls
+    - boot.taylorkemper.com
+    secretName: boot-production-tls
   rules:
-  - host: apps.taylorkemper.com
+  - host: boot.taylorkemper.com
     http:
       paths:
-      - path: /boot
+      - path: /
         backend:
           serviceName: boot
           servicePort: 80

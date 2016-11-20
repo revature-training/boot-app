@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: staging
+  name: boot-production
   labels:
-    name: staging
+    app: boot

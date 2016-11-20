@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "boot"
+  namespace: "boot-staging"
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - boot.staging.taylorkemper.com
+    secretName: boot-staging-tls
+  rules:
+  - host: boot.staging.taylorkemper.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: boot
+          servicePort: 80
