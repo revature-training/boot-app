@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - boot.staging.taylorkemper.com
+    - boot.staging.revaturelabs.com
     secretName: boot-staging-tls
   rules:
-  - host: boot.staging.taylorkemper.com
+  - host: boot.staging.revaturelabs.com
     http:
       paths:
       - path: /

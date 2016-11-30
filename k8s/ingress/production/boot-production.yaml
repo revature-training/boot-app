@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - boot.taylorkemper.com
+    - boot.revaturelabs.com
     secretName: boot-production-tls
   rules:
-  - host: boot.taylorkemper.com
+  - host: boot.revaturelabs.com
     http:
       paths:
       - path: /
