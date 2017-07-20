@@ -1,4 +1,4 @@
-# boot-appjkasdfdas
+# boot-app
 
 ### Build JAR
 
